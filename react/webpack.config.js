@@ -1,9 +1,10 @@
-var path = require("path");
-var webpack = require('webpack');
+const path = require("path");
+const webpack = require('webpack');
+const WebpackBrowserPlugin = require('webpack-browser-plugin');
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
+        'webpack-dev-server/client?http://0.0.0.0:8888', // WebpackDevServer host and port
         'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
         "./entry.js"
     ],
@@ -60,7 +61,7 @@ module.exports = {
     },
     devServer: {
         contentBase: __dirname, // 当前服务目录
-        port: 8080,
+        port: 8888,
         inline: true,
         historyApiFallback: true,
         stats: {
@@ -72,6 +73,9 @@ module.exports = {
         presets: ['react', 'es2015']
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new WebpackBrowserPlugin({
+            browser: 'Chrome'
+        })
     ]
 };

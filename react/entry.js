@@ -1,24 +1,23 @@
 window.jQuery = require('jquery');
 require('bootstrap-webpack');
 
-import { Router, Route, Link} from 'react-router';
-import CommentEditor from './component/content';
-import Header from './component/header';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var React = require('react');
-var ReactDOM = require('react-dom');
+import { Router, Route, Link, hashHistory} from 'react-router';
+import CommentEditor from './component/content';
+import App from './app';
 
 var HelloMessage = React.createClass({
     render: function() {
         return (
-            <div> <Header />Hello { this.props.name } 
-                <div className="jumbotron">
-                    <h1>Hello, worlds!</h1>
-                    <p>This is sddmple herod unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                    <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn smore</a></p>
-                </div>
-                <CommentEditor />
-            </div>
+
+            <Router history={hashHistory}>
+                <Route path="/" component={App}>
+                    <Route path="/aaa" component={CommentEditor} />
+                    <Route path="/bbb" component={CommentEditor} />
+                </Route>
+            </Router>
         );
     }
 });
