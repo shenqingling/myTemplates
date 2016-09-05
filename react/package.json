@@ -5,7 +5,7 @@
   "main": "entry.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd react && webpack-dev-server --progress --colors"
+    "start": "webpack-dev-server --progress --colors"
   },
   "author": "shenqingling",
   "license": "ISC",
