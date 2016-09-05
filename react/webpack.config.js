@@ -59,6 +59,8 @@ module.exports = {
 
         ]
     },
+    // chrome引入了source-map文件，标识es5代码对应的转码前的es6代码
+    devtool: 'source-map',
     devServer: {
         contentBase: __dirname, // 当前服务目录
         port: 8888,
