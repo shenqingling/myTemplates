@@ -1,0 +1,28 @@
+<div class="container todo_container">
+  <h2>My todos</h2>
+  <!-- Todos input -->
+  <form role="form" class="todo_form" ng-submit="addTodo()">
+    <div class="row">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="请输入待办事项" ng-model="todo">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" type="button">Add</button>
+        </span>
+      </div>
+    </div>
+  </form>
+  <!-- Todos list -->
+  <!-- why ng-model="todos"? 删了好像也有用的嘛 -->
+  <div ui-sortable ng-model="todos" class="todo_list">
+    <p class="input-group" ng-repeat="todo in todos">
+      <span class="input-group-addon">
+        <input type="checkbox">
+      </span>
+      <!-- why `"todo"` ? why not `{todo}` or `{{todo}}` -->
+      <input type="text" class="form-control" ng-model="todo">
+      <span class="input-group-btn">
+        <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+      </span>
+    </p>
+  </div>
+</div>

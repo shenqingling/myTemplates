@@ -5,7 +5,8 @@
   "main": "entry.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd react && webpack-dev-server --progress --colors"
+    "start": "webpack-dev-server --progress --colors",
+    "eslint": "eslint --ext .js component"
   },
   "author": "shenqingling",
   "license": "ISC",
@@ -14,6 +15,9 @@
     "babel-preset-react": "^6.11.1",
     "bootstrap": "^3.3.7",
     "bootstrap-webpack": "0.0.5",
+    "eslint": "^3.4.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-react": "^6.2.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "webpack": "^1.13.1",
@@ -33,6 +37,7 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "path": "^0.12.7",
+    "pubsub-js": "^1.5.3",
     "react-hot-loader": "^1.3.0",
     "react-router": "^2.6.1",
     "style-loader": "^0.13.1",

@@ -33,6 +33,12 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/, //这两种文件不编译
                 loaders: ['react-hot', 'babel']
             },
+            // eslint
+            // {
+            //     test: /\.js$/,
+            //     exclude: /node_modules/,
+            //     loaders: ['babel-loader']
+            // },
 
             // **IMPORTANT** This is needed so that each bootstrap js file required by
             // bootstrap-webpack has access to the jQuery object
@@ -59,6 +65,8 @@ module.exports = {
 
         ]
     },
+    // chrome引入了source-map文件，标识es5代码对应的转码前的es6代码
+    devtool: 'source-map',
     devServer: {
         contentBase: __dirname, // 当前服务目录
         port: 8888,
@@ -68,6 +76,9 @@ module.exports = {
             colors: true
         },
         hot: true
+    },
+    eslint: {
+        configFile: './.eslintrc'
     },
     babel: {
         presets: ['react', 'es2015']

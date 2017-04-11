@@ -1,0 +1,12 @@
+body {
+    padding: 0;
+}
+
+.todo_container .todo_form {
+    margin: 10px auto;
+}
+
+.todo_container .todo_list > p {
+    padding: 5px 10px;
+    cursor: move;
+}

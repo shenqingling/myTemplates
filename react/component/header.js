@@ -1,7 +1,23 @@
 import React from 'react';
 import {Link} from 'react-router';
 
+import PubSub from "pubsub-js";
+
 export default class Header extends React.Component {
+
+    componentWillMount(){
+        PubSub.subscribe('123456789', this.closeModal);
+    }
+
+    /**
+      * [closeModal 模拟关闭 Modal 窗口]
+      * @return        {[type]}                 [description]
+    */
+    closeModal(){
+        console.log('close close close close....')
+    }
+
+
     render() {
         return (
             <nav className="navbar navbar-default header-nav" style={{position: 'fixed', width: '100%'}}>
@@ -19,7 +35,7 @@ export default class Header extends React.Component {
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul className="nav navbar-nav">
                     <li className="active"><a href="#">Link <span className="sr-only">(current)</span></a></li>
-                    <li><Link to="/aaa">Link</Link></li>
+                    <li><Link to="/aaa">Buttonsssss</Link></li>
                     <li className="dropdown">
                       <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
                       <ul className="dropdown-menu">
