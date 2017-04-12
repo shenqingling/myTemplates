@@ -22,6 +22,7 @@
     "react-dom": "^15.5.3",
     "react-router": "^2.8.1",
     "webpack": "^1.13.2",
+    "webpack-browser-plugin": "^1.0.20",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
