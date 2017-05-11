@@ -2,12 +2,12 @@ const path = require('path');
 const WebpackBrowserPlugin = require('webpack-browser-plugin');
 
 module.exports = {
-    entry: [
-        './entry.js',
-    ],
+    entry: {
+        main: './entry.js',
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].js',
     },
     module: {
         loaders: [{
@@ -16,10 +16,6 @@ module.exports = {
             loader: 'babel-loader'
         }]
     },
-    devServer: {
-        // publicPath: path.resolve(__dirname, '/dist'),
-        // contentBase: ''
-    },
     devtool: 'inline-source-map',
     externals: {
         'react': 'React',
@@ -27,6 +23,6 @@ module.exports = {
         'react-router': 'ReactRouter',
     },
     plugins: [
-        new WebpackBrowserPlugin()
+        new WebpackBrowserPlugin(),
     ],
 }
