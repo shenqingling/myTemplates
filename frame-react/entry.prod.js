@@ -1,6 +1,5 @@
 import { Router, browserHistory } from 'react-router'
 import { render } from 'react-dom'
-import withExampleBasename from './dist/withExampleBasename'
 // import routes from './app/routes'
 
 let routes = {
@@ -11,14 +10,14 @@ let routes = {
             path: "repos",
             getComponent: (nextState, cb) => {
                 require.ensure([], (require) => {
-                    cb(null, require('./src/component/repos')).default
+                    cb(null, require('./src/component/repos').default)
                 })
             }
         }, {
             path: "about",
             getComponent: (nextState, cb) => {
                 require.ensure([], (require) => {
-                    cb(null, require('./src/component/about')).default
+                    cb(null, require('./src/component/about').default)
                 })
             }
         }]
@@ -26,5 +25,5 @@ let routes = {
 }
 
 render(<Router
-               history={ withExampleBasename(browserHistory) }
+               history={ browserHistory }
                routes={ routes } />, document.getElementById('app'))
