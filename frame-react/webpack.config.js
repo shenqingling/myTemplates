@@ -21,6 +21,7 @@ module.exports = {
         'react': 'React',
         'react-dom': 'ReactDOM',
         'react-router': 'ReactRouter',
+        'antd': 'antd'
     },
     plugins: [
         new WebpackBrowserPlugin(),

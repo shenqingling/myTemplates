@@ -18,14 +18,14 @@ webpackJsonp([0,3],[
 	            path: "repos",
 	            getComponent: function getComponent(nextState, cb) {
 	                __webpack_require__.e/* nsure */(1, function (require) {
-	                    cb(null, __webpack_require__(5).default);
+	                    cb(null, __webpack_require__(6).default);
 	                });
 	            }
 	        }, {
 	            path: "about",
 	            getComponent: function getComponent(nextState, cb) {
 	                __webpack_require__.e/* nsure */(2, function (require) {
-	                    cb(null, __webpack_require__(6).default);
+	                    cb(null, __webpack_require__(7).default);
 	                });
 	            }
 	        }]
@@ -66,6 +66,8 @@ webpackJsonp([0,3],[
 
 	var _reactRouter = __webpack_require__(1);
 
+	var _antd = __webpack_require__(5);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -89,7 +91,11 @@ webpackJsonp([0,3],[
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                'app',
+	                _react2.default.createElement(
+	                    _antd.Button,
+	                    { type: 'primary' },
+	                    'Primary'
+	                ),
 	                _react2.default.createElement(
 	                    _reactRouter.Link,
 	                    { to: '/about' },
@@ -115,6 +121,12 @@ webpackJsonp([0,3],[
 /***/ function(module, exports) {
 
 	module.exports = React;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	module.exports = antd;
 
 /***/ }
 ]);
