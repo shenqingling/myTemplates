@@ -1,7 +1,7 @@
 webpackJsonp([1,3],{
 
 /***/ 11:
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -48,6 +48,6 @@ webpackJsonp([1,3],{
 
 	exports.default = Repos;
 
-/***/ }
+/***/ })
 
 });
