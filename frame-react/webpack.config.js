@@ -1,9 +1,14 @@
 const path = require('path');
+const webpack = require('webpack');
 const WebpackBrowserPlugin = require('webpack-browser-plugin');
 
 module.exports = {
     entry: {
-        main: './entry.js',
+        main: [
+            'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
+            'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+            './entry.js'
+        ],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -26,7 +31,9 @@ module.exports = {
         'react-router': 'ReactRouter',
         'antd': 'antd'
     },
+    // hot: true,
     plugins: [
         new WebpackBrowserPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ],
 }
