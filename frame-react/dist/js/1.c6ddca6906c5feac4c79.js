@@ -1,6 +1,6 @@
-webpackJsonp([2,3],{
+webpackJsonp([1,3],{
 
-/***/ 7:
+/***/ 11:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23,30 +23,30 @@ webpackJsonp([2,3],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var About = function (_Component) {
-	    _inherits(About, _Component);
+	var Repos = function (_Component) {
+	    _inherits(Repos, _Component);
 
-	    function About() {
-	        _classCallCheck(this, About);
+	    function Repos() {
+	        _classCallCheck(this, Repos);
 
-	        return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (Repos.__proto__ || Object.getPrototypeOf(Repos)).apply(this, arguments));
 	    }
 
-	    _createClass(About, [{
+	    _createClass(Repos, [{
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                'AboutPage'
+	                'ReposPage'
 	            );
 	        }
 	    }]);
 
-	    return About;
+	    return Repos;
 	}(_react.Component);
 
-	exports.default = About;
+	exports.default = Repos;
 
 /***/ }
 
