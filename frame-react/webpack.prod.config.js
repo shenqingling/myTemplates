@@ -29,7 +29,8 @@ module.exports = {
         'react': 'React',
         'react-dom': 'ReactDOM',
         'react-router': 'ReactRouter',
-        'antd': 'antd'
+        'antd': 'antd',
+        '$': 'jquery'
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({

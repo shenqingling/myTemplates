@@ -29,7 +29,16 @@ module.exports = {
         'react': 'React',
         'react-dom': 'ReactDOM',
         'react-router': 'ReactRouter',
-        'antd': 'antd'
+        'antd': 'antd',
+        '$': 'jquery'
+    },
+    devServer: {
+        proxy: { // proxy URLs to backend development server
+            '/v1/**': {
+                target: 'https://www.easy-mock.com/mock/5911920dacb959185b0c3cbe/example',
+                secure: false,
+            },
+        },
     },
     // hot: true,
     plugins: [

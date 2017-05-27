@@ -1,56 +1,12 @@
-webpackJsonp([0,3],[
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _reactRouter = __webpack_require__(1);
-
-	var _reactDom = __webpack_require__(2);
-
-	// import routes from './app/routes'
-
-	var routes = {
-	    childRoutes: [{
-	        path: "/",
-	        component: __webpack_require__(3).default,
-	        childRoutes: [{
-	            path: "repos",
-	            getComponent: function getComponent(nextState, cb) {
-	                __webpack_require__.e/* nsure */(1, function (require) {
-	                    cb(null, __webpack_require__(11).default);
-	                });
-	            }
-	        }, {
-	            path: "about",
-	            getComponent: function getComponent(nextState, cb) {
-	                __webpack_require__.e/* nsure */(2, function (require) {
-	                    cb(null, __webpack_require__(12).default);
-	                });
-	            }
-	        }]
-	    }]
-	};
-
-	(0, _reactDom.render)(React.createElement(_reactRouter.Router, {
-	    history: _reactRouter.browserHistory,
-	    routes: routes }), document.getElementById('app'));
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-	module.exports = ReactRouter;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-	module.exports = ReactDOM;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+webpackJsonp([1,2],[
+/* 0 */,
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -66,9 +22,9 @@ webpackJsonp([0,3],[
 
 	var _reactRouter = __webpack_require__(1);
 
-	var _antd = __webpack_require__(5);
+	var _antd = __webpack_require__(7);
 
-	__webpack_require__(6);
+	__webpack_require__(8);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -82,13 +38,13 @@ webpackJsonp([0,3],[
 	    Sider = _antd.Layout.Sider,
 	    Content = _antd.Layout.Content;
 
-	var App = function (_Component) {
-	    _inherits(App, _Component);
+	var Index = function (_Component) {
+	    _inherits(Index, _Component);
 
-	    function App(props) {
-	        _classCallCheck(this, App);
+	    function Index(props) {
+	        _classCallCheck(this, Index);
 
-	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+	        var _this = _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).call(this, props));
 
 	        _this.state = {
 	            collapsed: false
@@ -96,7 +52,7 @@ webpackJsonp([0,3],[
 	        return _this;
 	    }
 
-	    _createClass(App, [{
+	    _createClass(Index, [{
 	        key: 'toggle',
 	        value: function toggle() {
 	            this.setState({
@@ -175,31 +131,25 @@ webpackJsonp([0,3],[
 	        }
 	    }]);
 
-	    return App;
+	    return Index;
 	}(_react.Component);
 
-	exports.default = App;
+	exports.default = Index;
 
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-	module.exports = React;
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
 
 	module.exports = antd;
 
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(7);
+	var content = __webpack_require__(9);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -207,7 +157,7 @@ webpackJsonp([0,3],[
 	var options = {}
 	options.transform = transform
 	// add the styles to the DOM
-	var update = __webpack_require__(9)(content, options);
+	var update = __webpack_require__(11)(content, options);
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -223,23 +173,23 @@ webpackJsonp([0,3],[
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(8)(undefined);
+	exports = module.exports = __webpack_require__(10)(undefined);
 	// imports
 
 
 	// module
-	exports.push([module.id, "#app .trigger {\n  font-size: 18px;\n  line-height: 64px;\n  padding: 0 16px;\n  cursor: pointer;\n  transition: color .3s;\n}\n\n#app .trigger:hover {\n  color: #108ee9;\n}\n\n#app .logo {\n  height: 32px;\n  background: #333;\n  border-radius: 6px;\n  margin: 16px;\n}\n\n#app .ant-layout-sider-collapsed .anticon {\n  font-size: 16px;\n}\n\n#app .ant-layout-sider-collapsed .nav-text {\n  display: none;\n}", ""]);
+	exports.push([module.id, "#app .trigger {\r\n  font-size: 18px;\r\n  line-height: 64px;\r\n  padding: 0 16px;\r\n  cursor: pointer;\r\n  transition: color .3s;\r\n}\r\n\r\n#app .trigger:hover {\r\n  color: #108ee9;\r\n}\r\n\r\n#app .logo {\r\n  height: 32px;\r\n  background: #333;\r\n  border-radius: 6px;\r\n  margin: 16px;\r\n}\r\n\r\n#app .ant-layout-sider-collapsed .anticon {\r\n  font-size: 16px;\r\n}\r\n\r\n#app .ant-layout-sider-collapsed .nav-text {\r\n  display: none;\r\n}", ""]);
 
 	// exports
 
 
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
 
 	/*
 		MIT License http://www.opensource.org/licenses/mit-license.php
@@ -319,9 +269,9 @@ webpackJsonp([0,3],[
 	}
 
 
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
 
 	/*
 		MIT License http://www.opensource.org/licenses/mit-license.php
@@ -366,7 +316,7 @@ webpackJsonp([0,3],[
 	var	singletonCounter = 0;
 	var	stylesInsertedAtTop = [];
 
-	var	fixUrls = __webpack_require__(10);
+	var	fixUrls = __webpack_require__(12);
 
 	module.exports = function(list, options) {
 		if (false) {
@@ -678,9 +628,9 @@ webpackJsonp([0,3],[
 	}
 
 
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
 
 	
 	/**
@@ -773,5 +723,5 @@ webpackJsonp([0,3],[
 	};
 
 
-/***/ })
+/***/ }
 ]);
