@@ -1,4 +1,4 @@
-webpackJsonp([0,3],[
+webpackJsonp([0,2],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -14,20 +14,16 @@ webpackJsonp([0,3],[
 	    childRoutes: [{
 	        path: "/",
 	        component: __webpack_require__(3).default,
-	        childRoutes: [{
-	            path: "repos",
+	        indexRoute: {
 	            getComponent: function getComponent(nextState, cb) {
 	                __webpack_require__.e/* nsure */(1, function (require) {
 	                    cb(null, __webpack_require__(6).default);
 	                });
 	            }
-	        }, {
-	            path: "about",
-	            getComponent: function getComponent(nextState, cb) {
-	                __webpack_require__.e/* nsure */(2, function (require) {
-	                    cb(null, __webpack_require__(7).default);
-	                });
-	            }
+	        },
+	        childRoutes: [{
+	            path: "topic",
+	            component: __webpack_require__(5).default
 	        }]
 	    }]
 	};
@@ -62,14 +58,6 @@ webpackJsonp([0,3],[
 
 	var _react = __webpack_require__(4);
 
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(1);
-
-	var _antd = __webpack_require__(5);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -88,24 +76,9 @@ webpackJsonp([0,3],[
 	    _createClass(App, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(
+	            return React.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(
-	                    _antd.Button,
-	                    { type: 'primary' },
-	                    'Primary'
-	                ),
-	                _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: '/about' },
-	                    ' about'
-	                ),
-	                _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: '/repos' },
-	                    ' repos'
-	                ),
 	                this.props.children
 	            );
 	        }
@@ -124,9 +97,74 @@ webpackJsonp([0,3],[
 
 /***/ },
 /* 5 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = antd;
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(4);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Topic = function (_Component) {
+	    _inherits(Topic, _Component);
+
+	    function Topic(props) {
+	        _classCallCheck(this, Topic);
+
+	        var _this = _possibleConstructorReturn(this, (Topic.__proto__ || Object.getPrototypeOf(Topic)).call(this, props));
+
+	        _this.state = {
+	            list: []
+	        };
+	        return _this;
+	    }
+
+	    _createClass(Topic, [{
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            var _this2 = this;
+
+	            $.get('/v1/topic/list').done(function (data) {
+	                var list = data.entity.list;
+	                _this2.setState({
+	                    list: list
+	                });
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var list = this.state.list;
+
+	            return React.createElement(
+	                'div',
+	                null,
+	                'topic',
+	                list.map(function (item, i) {
+	                    return React.createElement(
+	                        'div',
+	                        { key: 'topic_' + i },
+	                        item.title
+	                    );
+	                })
+	            );
+	        }
+	    }]);
+
+	    return Topic;
+	}(_react.Component);
+
+	exports.default = Topic;
 
 /***/ }
 ]);

@@ -20,13 +20,17 @@ module.exports = {
             test: /\.js$/,
             exclude: /(node_modules|bower_components)/,
             loader: 'babel-loader'
+        }, {
+            test: /\.css$/,
+            loaders: ["style", "css"]
         }]
     },
     externals: {
         'react': 'React',
         'react-dom': 'ReactDOM',
         'react-router': 'ReactRouter',
-        'antd': 'antd'
+        'antd': 'antd',
+        '$': 'jquery'
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({

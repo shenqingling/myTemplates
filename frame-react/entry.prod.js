@@ -6,20 +6,16 @@ let routes = {
     childRoutes: [{
         path: "/",
         component: require('./src/app').default,
+        indexRoute: {
+            getComponent: (nextState, cb) => {
+                require.ensure([], (require) => {
+                    cb(null, require('./src/index').default)
+                })
+            }
+        },
         childRoutes: [{
-            path: "repos",
-            getComponent: (nextState, cb) => {
-                require.ensure([], (require) => {
-                    cb(null, require('./src/component/repos').default)
-                })
-            }
-        }, {
-            path: "about",
-            getComponent: (nextState, cb) => {
-                require.ensure([], (require) => {
-                    cb(null, require('./src/component/about').default)
-                })
-            }
+            path: "topic",
+            component: require('./src/topic/topic').default,
         }]
     }]
 }
