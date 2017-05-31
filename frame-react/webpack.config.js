@@ -24,7 +24,8 @@ module.exports = {
             loaders: ["style", "css"]
         }]
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
+    // devtool: 'inline-source-map',
     externals: {
         'react': 'React',
         'react-dom': 'ReactDOM',

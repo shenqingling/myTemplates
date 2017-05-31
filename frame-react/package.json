@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "rm -rf dist/js && webpack --config webpack.prod.config.js",
-    "rmdist": ""
+    "test-start": "node dist/server.js",
+    "prod-start": "nohup node dist/server.js &"
   },
   "keywords": [
     "react",
