@@ -1,9 +1,13 @@
-import Vue from 'vue';
-// import './index.js';
-import Index from './Index.vue';
+import Vue from 'vue'
+// 路由
+import router from './route'
+// 总页面
+import Index from './components/Index.vue'
 
 var app = new Vue({
-    el: '#app',
+    router,
     template: '<Index />',
-    components: { Index }
-})
+    components: {
+        Index
+    }
+}).$mount('#app')
