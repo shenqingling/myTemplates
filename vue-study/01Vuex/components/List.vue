@@ -19,17 +19,22 @@
 <!--  -->
 <script>
 module.exports = {
-    // name: 'index',
     data: function() {
         return {
             greeting: 'Hello',
-            list: []
+        }
+    },
+    computed: {
+        list () {
+            return this.$store.state.moviesList;
         }
     },
     mounted: function() {
-        $.get('https://www.easy-mock.com/mock/595508da9adc231f356dd755/movies-recommand/movies/list', (data) => {
-            this.list = data.entity
-        })
+        this.$store.dispatch('getMoviesList');
+        // $.get('https://www.easy-mock.com/mock/595508da9adc231f356dd755/movies-recommand/movies/list', (data) => {
+        //     let list = data.entity
+        //     this.$store.commit('getMoviesList', list)
+        // })
     }
 }
 </script>

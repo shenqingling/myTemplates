@@ -11,21 +11,17 @@
 <!--  -->
 <script>
 module.exports = {
-    // name: 'index',
     data: function() {
-        return {
-            detail: {
-                title: '',
-                score: '',
-                pic: ''
-            }
+        return {}
+    },
+    computed:{
+        detail(){
+            return this.$store.state.movieDetail;
         }
     },
     mounted: function() {
         let id = this.$route.params.id;
-        $.get(`https://www.easy-mock.com/mock/595508da9adc231f356dd755/movies-recommand/movies/detail/${id}`, (data) => {
-            this.detail = data.entity
-        })
+        this.$store.dispatch('getMovieDetail', id);
     }
 }
 </script>

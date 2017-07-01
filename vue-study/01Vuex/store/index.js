@@ -5,12 +5,32 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        count: 0
+        moviesList: [],
+        movieDetail:{}
     },
     mutations: {
-        increment(state) {
-            state.count++
-        }
+    	// mutation 必须是同步函数
+    	getMoviesList(state, list){   // why not {moviesList}
+			state.moviesList = list;
+    	},
+    	getMovieDetail(state, detail){
+    		state.movieDetail = detail;
+    	}
+    },
+    actions:{
+    	// action 提交 mutation，不能直接改变 state
+    	// action 可以包含异步操作
+    	getMoviesList(context){
+    		$.get('https://www.easy-mock.com/mock/595508da9adc231f356dd755/movies-recommand/movies/list', (data) => {
+	            context.commit('getMoviesList',data.entity);
+	        })
+    	},
+    	getMovieDetail(context,id){
+    		$.get(`https://www.easy-mock.com/mock/595508da9adc231f356dd755/movies-recommand/movies/detail/${id}`, (data) => {
+            	let detail = data.entity;
+            	context.commit('getMovieDetail', detail);
+        	})
+    	}
     }
 })
 
