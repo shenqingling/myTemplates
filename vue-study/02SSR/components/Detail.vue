@@ -19,9 +19,9 @@ module.exports = {
             return this.$store.state.movieDetail;
         }
     },
-    mounted: function() {
-        let id = this.$route.params.id;
-        this.$store.dispatch('getMovieDetail', id);
+    asyncData ({ store, route },url) {
+        // 触发 action 后，会返回 Promise
+        return store.dispatch('getMovieDetail', url);
     }
 }
 </script>

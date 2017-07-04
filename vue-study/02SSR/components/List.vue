@@ -29,13 +29,14 @@ module.exports = {
             return this.$store.state.moviesList;
         }
     },
-    mounted: function() {
-        this.$store.dispatch('getMoviesList');
-        // $.get('https://www.easy-mock.com/mock/595508da9adc231f356dd755/movies-recommand/movies/list', (data) => {
-        //     let list = data.entity
-        //     this.$store.commit('getMoviesList', list)
-        // })
-    }
+    asyncData ({ store, route }) {
+        // 触发 action 后，会返回 Promise
+        return store.dispatch('getMoviesList')
+    },
+//    created: function() {
+//        console.log('mounted')
+//        this.$store.dispatch('getMoviesList');
+//    }
 }
 </script>
 <!--  -->
